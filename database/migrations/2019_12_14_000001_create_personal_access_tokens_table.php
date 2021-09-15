@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\Schema;
 
 class CreatePersonalAccessTokensTable extends Migration
 {
+    public function boot()
+    {
+    Schema::defaultStringLength(191);
+    }
     /**
      * Run the migrations.
      *
@@ -33,9 +37,4 @@ class CreatePersonalAccessTokensTable extends Migration
     {
         Schema::dropIfExists('personal_access_tokens');
     }
-
-    public function boot()
-{
-    Schema::defaultStringLength(191);
-}
 }
