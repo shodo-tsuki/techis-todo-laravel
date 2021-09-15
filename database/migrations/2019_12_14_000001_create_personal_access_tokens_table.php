@@ -33,4 +33,9 @@ class CreatePersonalAccessTokensTable extends Migration
     {
         Schema::dropIfExists('personal_access_tokens');
     }
+
+    public function boot()
+{
+    Schema::defaultStringLength(191);
+}
 }
